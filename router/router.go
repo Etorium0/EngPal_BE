@@ -13,9 +13,6 @@ func SetupRouter() *mux.Router {
 	r.HandleFunc("/api/assignment/generate", handler.GenerateAssignment).Methods("POST")
 	r.HandleFunc("/api/assignment/suggest-topics", handler.SuggestTopics).Methods("GET")
 
-	// Healthcheck routes
-	r.HandleFunc("/api/healthcheck", handler.Healthcheck).Methods("GET")
-
 	// Review routes
 	r.HandleFunc("/api/review/generate", handler.GenerateReview).Methods("POST")
 
