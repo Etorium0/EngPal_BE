@@ -1,8 +1,7 @@
 package router
 
 import (
-	"course-golang/handler"
-	"net/http"
+	"EngPal/handler"
 
 	"github.com/gorilla/mux"
 )

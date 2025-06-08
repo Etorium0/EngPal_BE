@@ -3,4 +3,4 @@ database:
   port: 5432
   user: admin
   password: admin
-  name: engace_db
+  name: EngPal_db
