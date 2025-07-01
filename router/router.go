@@ -32,5 +32,12 @@ func SetupRouter(db *sql.DB) *mux.Router {
 	r.HandleFunc("/api/register", authHandler.ServeRegister).Methods("POST")
 	r.HandleFunc("/api/forgot-password", authHandler.ServeForgotPassword).Methods("POST")
 
+	// Notification routes
+	r.HandleFunc("/api/user/notification-setting", handler.UpdateNotificationSettingHandler(db)).Methods("POST")
+	r.HandleFunc("/api/user/notification-setting", handler.GetNotificationSettingHandler(db)).Methods("GET")
+
+	// New route
+	r.HandleFunc("/api/notify/test", handler.SendTestNotification).Methods("POST")
+
 	return r
 }
