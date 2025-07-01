@@ -39,5 +39,8 @@ func SetupRouter(db *sql.DB) *mux.Router {
 	// New route
 	r.HandleFunc("/api/notify/test", handler.SendTestNotification).Methods("POST")
 
+	// Push token route
+	r.HandleFunc("/api/user/push-token", handler.SavePushTokenHandler(db)).Methods("POST")
+
 	return r
 }

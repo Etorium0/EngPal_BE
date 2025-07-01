@@ -75,4 +75,31 @@ func SendTestNotification(w http.ResponseWriter, r *http.Request) {
 	// log.Printf("Send notify to user %d: %s - %s", req.UserID, req.Title, req.Body)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write([]byte(`{"success": true}`))
+}
+
+// Handler lưu Expo Push Token cho user
+// POST /api/user/push-token
+
+type PushTokenRequest struct {
+	Token string `json:"token"`
+}
+
+func SavePushTokenHandler(db *sql.DB) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		userID := getUserIDFromContext(r)
+		var req PushTokenRequest
+		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			http.Error(w, "Invalid request", http.StatusBadRequest)
+			return
+		}
+		_, err := db.Exec(`INSERT INTO user_push_token (user_id, token, updated_at)
+			VALUES ($1, $2, $3)
+			ON CONFLICT (user_id) DO UPDATE SET token = $2, updated_at = $3`,
+			userID, req.Token, time.Now())
+		if err != nil {
+			http.Error(w, "DB error", http.StatusInternalServerError)
+			return
+		}
+		w.WriteHeader(http.StatusOK)
+	}
 } 
