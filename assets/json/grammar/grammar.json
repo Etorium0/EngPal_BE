@@ -1,0 +1,296 @@
+[
+    {
+      "topic": "Thì (Tenses)",
+      "sub_topics": [
+        {
+          "name": "Thì hiện tại đơn (Simple Present)",
+          "formula": {
+            "affirmative": "S + V (nguyên thể/V-s/es)",
+            "negative": "S + do/does + not + V (nguyên thể)",
+            "interrogative": "Do/Does + S + V (nguyên thể)?"
+          },
+          "explanation": "Diễn tả thói quen, hành động lặp đi lặp lại, sự thật hiển nhiên, lịch trình, hoặc tình trạng cố định.",
+          "examples": [
+            "She drinks coffee every morning.",
+            "The sun rises in the east.",
+            "The train leaves at 7 PM."
+          ]
+        },
+        {
+          "name": "Thì hiện tại tiếp diễn (Present Continuous)",
+          "formula": {
+            "affirmative": "S + am/is/are + V-ing",
+            "negative": "S + am/is/are + not + V-ing",
+            "interrogative": "Am/Is/Are + S + V-ing?"
+          },
+          "explanation": "Diễn tả hành động đang diễn ra tại thời điểm nói, hành động tạm thời, hoặc kế hoạch trong tương lai gần.",
+          "examples": [
+            "They are studying for their exam right now.",
+            "I am working on a new project this week.",
+            "We are meeting him tomorrow."
+          ]
+        },
+        {
+          "name": "Thì quá khứ đơn (Simple Past)",
+          "formula": {
+            "affirmative": "S + V-ed/V2 (động từ bất quy tắc)",
+            "negative": "S + did + not + V (nguyên thể)",
+            "interrogative": "Did + S + V (nguyên thể)?"
+          },
+          "explanation": "Diễn tả hành động đã xảy ra và kết thúc hoàn toàn trong quá khứ tại một thời điểm xác định.",
+          "examples": [
+            "I visited Ha Long Bay last year.",
+            "She didn't come to the party yesterday.",
+            "Did you see him at the conference?"
+          ]
+        },
+        {
+          "name": "Thì quá khứ tiếp diễn (Past Continuous)",
+          "formula": {
+            "affirmative": "S + was/were + V-ing",
+            "negative": "S + was/were + not + V-ing",
+            "interrogative": "Was/Were + S + V-ing?"
+          },
+          "explanation": "Diễn tả hành động đang diễn ra tại một thời điểm cụ thể trong quá khứ, hoặc một hành động đang diễn ra thì bị một hành động khác xen vào.",
+          "examples": [
+            "At 8 PM yesterday, I was watching TV.",
+            "While I was reading, the phone rang."
+          ]
+        },
+        {
+          "name": "Thì hiện tại hoàn thành (Present Perfect)",
+          "formula": {
+            "affirmative": "S + has/have + V3/ed",
+            "negative": "S + has/have + not + V3/ed",
+            "interrogative": "Has/Have + S + V3/ed?"
+          },
+          "explanation": "Diễn tả hành động bắt đầu trong quá khứ và vẫn tiếp diễn đến hiện tại, hoặc hành động đã xảy ra trong quá khứ nhưng kết quả/kinh nghiệm còn liên quan đến hiện tại.",
+          "examples": [
+            "We have lived here for five years.",
+            "She has never seen a tiger.",
+            "I have just finished my homework."
+          ]
+        },
+        {
+          "name": "Thì tương lai đơn (Simple Future)",
+          "formula": {
+            "affirmative": "S + will + V (nguyên thể)",
+            "negative": "S + will + not (won't) + V (nguyên thể)",
+            "interrogative": "Will + S + V (nguyên thể)?"
+          },
+          "explanation": "Diễn tả hành động sẽ xảy ra trong tương lai (dự đoán, quyết định tức thì, lời hứa, lời đề nghị).",
+          "examples": [
+            "I will call you later.",
+            "It will probably rain tomorrow.",
+            "Will you help me with this box?"
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Loại từ (Parts of Speech)",
+      "sub_topics": [
+        {
+          "name": "Danh từ (Nouns)",
+          "explanation": "Là những từ dùng để gọi tên người, vật, địa điểm, ý tưởng, khái niệm, hoặc sự vật.",
+          "examples": [
+            "Person: student, teacher, John",
+            "Place: city, park, Vietnam",
+            "Thing: book, table, computer",
+            "Idea/Concept: love, happiness, freedom"
+          ]
+        },
+        {
+          "name": "Động từ (Verbs)",
+          "explanation": "Là từ dùng để diễn tả hành động, trạng thái, hoặc sự tồn tại của chủ ngữ.",
+          "examples": [
+            "Action: run, eat, read, write",
+            "State of Being: be (am, is, are, was, were), seem, appear",
+            "Mental State: think, know, believe"
+          ]
+        },
+        {
+          "name": "Tính từ (Adjectives)",
+          "explanation": "Là từ dùng để miêu tả, bổ nghĩa cho danh từ hoặc đại từ, cho biết đặc điểm, tính chất của chúng.",
+          "examples": [
+            "A beautiful flower.",
+            "He is a tall man.",
+            "She felt happy."
+          ]
+        },
+        {
+          "name": "Trạng từ (Adverbs)",
+          "explanation": "Là từ dùng để bổ nghĩa cho động từ, tính từ, một trạng từ khác, hoặc cả câu, thường trả lời các câu hỏi như \"how?\" (thế nào?), \"when?\" (khi nào?), \"where?\" (ở đâu?), \"to what extent?\" (đến mức độ nào?).",
+          "examples": [
+            "He runs quickly.",
+            "She is very beautiful.",
+            "He drives too fast.",
+            "Yesterday, I went to the market."
+          ]
+        },
+        {
+          "name": "Đại từ (Pronouns)",
+          "explanation": "Là từ dùng để thay thế cho danh từ hoặc cụm danh từ để tránh lặp lại.",
+          "examples": [
+            "I, you, he, she, it, we, they (Đại từ nhân xưng)",
+            "This is my book. It is mine. (Đại từ sở hữu)",
+            "The man who lives next door is kind. (Đại từ quan hệ)"
+          ]
+        },
+        {
+          "name": "Giới từ (Prepositions)",
+          "explanation": "Là từ dùng để chỉ mối quan hệ giữa danh từ/đại từ với các từ khác trong câu, thường diễn tả vị trí, thời gian, phương hướng, hoặc cách thức.",
+          "examples": [
+            "The book is on the table.",
+            "I wake up at 6 AM.",
+            "She went to school."
+          ]
+        },
+        {
+          "name": "Liên từ (Conjunctions)",
+          "explanation": "Là từ dùng để nối các từ, cụm từ, mệnh đề hoặc câu lại với nhau.",
+          "examples": [
+            "And (và): Peter and Mary are friends.",
+            "But (nhưng): She is smart, but she is lazy.",
+            "Or (hoặc): Do you want coffee or tea?",
+            "Because (bởi vì): I stayed home because I was sick."
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Cấu trúc câu (Sentence Structures)",
+      "sub_topics": [
+        {
+          "name": "Câu đơn (Simple Sentences)",
+          "formula": "S + V + (O/C/A)",
+          "explanation": "Là câu có một mệnh đề độc lập duy nhất, diễn tả một ý tưởng hoàn chỉnh.",
+          "examples": [
+            "The bird sings.",
+            "She is reading a book.",
+            "He ran quickly."
+          ]
+        },
+        {
+          "name": "Câu ghép (Compound Sentences)",
+          "formula": "Mệnh đề độc lập + FANBOYS (for, and, nor, but, or, yet, so) + Mệnh đề độc lập",
+          "explanation": "Gồm hai hoặc nhiều mệnh đề độc lập được nối với nhau bằng liên từ đẳng lập (coordinating conjunctions) hoặc dấu chấm phẩy (;). Mỗi mệnh đề có thể đứng riêng như một câu hoàn chỉnh.",
+          "examples": [
+            "She likes coffee, and he prefers tea.",
+            "I want to go to the party, but I'm too tired.",
+            "You can stay here, or you can come with us."
+          ]
+        },
+        {
+          "name": "Câu phức (Complex Sentences)",
+          "formula": "Mệnh đề độc lập + Mệnh đề phụ thuộc (subordinate clause) hoặc Mệnh đề phụ thuộc + Mệnh đề độc lập",
+          "explanation": "Gồm một mệnh đề chính (độc lập) và ít nhất một mệnh đề phụ (phụ thuộc). Mệnh đề phụ thuộc không thể đứng một mình như một câu hoàn chỉnh và thường bắt đầu bằng các liên từ phụ thuộc (subordinating conjunctions) hoặc đại từ quan hệ (relative pronouns).",
+          "examples": [
+            "Although it was raining, we went for a walk.",
+            "I will call you when I arrive home.",
+            "This is the car that I bought yesterday."
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Thể Bị Động (Passive Voice)",
+      "formula": "be + V3/ed",
+      "explanation": "Thể bị động được dùng khi bạn muốn nhấn mạnh hành động hoặc đối tượng bị tác động bởi hành động, thay vì người thực hiện hành động. Động từ \"be\" chia theo thì của câu chủ động ban đầu.",
+      "examples": [
+        "The letter was written by John.",
+        "English is spoken all over the world."
+      ]
+    },
+    {
+      "topic": "Câu Điều Kiện (Conditional Sentences)",
+      "sub_topics": [
+        {
+          "name": "Loại 0 (Zero Conditional)",
+          "formula": "If + S + V (hiện tại đơn), S + V (hiện tại đơn)",
+          "explanation": "Diễn tả sự thật hiển nhiên, quy luật tự nhiên, hoặc hành động luôn đúng khi điều kiện xảy ra.",
+          "examples": [
+            "If you heat water to 100°C, it boils.",
+            "If I eat peanuts, I get sick."
+          ]
+        },
+        {
+          "name": "Loại 1 (First Conditional)",
+          "formula": "If + S + V (hiện tại đơn), S + will/can/may/might + V (nguyên thể)",
+          "explanation": "Diễn tả điều kiện có thể xảy ra ở hiện tại hoặc tương lai và kết quả có khả năng xảy ra cao.",
+          "examples": [
+            "If it rains tomorrow, we will stay home.",
+            "If you study hard, you will pass the exam."
+          ]
+        },
+        {
+          "name": "Loại 2 (Second Conditional)",
+          "formula": "If + S + V-ed/V2 (quá khứ đơn), S + would/could/might + V (nguyên thể)",
+          "explanation": "Diễn tả điều kiện không có thật ở hiện tại hoặc không thể xảy ra trong tương lai, thường là một giả định hoặc ước muốn.",
+          "examples": [
+            "If I were rich, I would travel the world.",
+            "If I had more time, I would learn to play the guitar."
+          ]
+        },
+        {
+          "name": "Loại 3 (Third Conditional)",
+          "formula": "If + S + had + V3/ed (quá khứ hoàn thành), S + would/could/might + have + V3/ed",
+          "explanation": "Diễn tả điều kiện không có thật trong quá khứ và kết quả giả định cũng không xảy ra trong quá khứ. Dùng để nói về những hối tiếc hoặc điều kiện đã không xảy ra.",
+          "examples": [
+            "If you had studied harder, you would have passed the exam.",
+            "If she had known about the traffic, she would have left earlier."
+          ]
+        }
+      ]
+    },
+    {
+      "topic": "Mệnh Đề Quan Hệ (Relative Clauses)",
+      "formula": "Danh từ + Đại từ quan hệ (who/whom/whose/which/that/where/when/why) + Mệnh đề",
+      "explanation": "Dùng để bổ nghĩa cho danh từ đứng trước nó, cung cấp thêm thông tin và giúp câu văn rõ ràng, súc tích hơn. Đại từ/trạng từ quan hệ đứng ngay sau danh từ mà nó bổ nghĩa.",
+      "examples": [
+        "This is the man who lives next door.",
+        "The book which I bought yesterday is very interesting.",
+        "That's the house where I grew up.",
+        "I remember the day when we first met."
+      ]
+    },
+    {
+      "topic": "Các Loại Từ Khác và Cấu Trúc Quan Trọng",
+      "sub_topics": [
+        {
+          "name": "Động từ khuyết thiếu (Modal Verbs)",
+          "formula": "S + Modal Verb + V (nguyên thể)",
+          "explanation": "Là những động từ đặc biệt đứng trước động từ chính để diễn tả khả năng, sự cho phép, sự bắt buộc, lời khuyên, dự đoán, v.v.",
+          "examples": [
+            "You should study harder.",
+            "She can speak three languages.",
+            "You must submit your assignment by Friday.",
+            "It might rain later."
+          ]
+        },
+        {
+          "name": "Đại từ sở hữu (Possessive Pronouns) và Tính từ sở hữu (Possessive Adjectives)",
+          "explanation": "Tính từ sở hữu đứng trước danh từ để chỉ sự sở hữu. Đại từ sở hữu thay thế cho tính từ sở hữu + danh từ, không đứng trước danh từ.",
+          "examples": [
+            "This is my book.",
+            "This book is mine.",
+            "Is that your car? No, it's not ours."
+          ]
+        },
+        {
+          "name": "So sánh hơn và so sánh nhất (Comparatives and Superlatives)",
+          "formula": {
+            "comparative": "Tính từ/trạng từ ngắn: adj/adv-er + than; Tính từ/trạng từ dài: more + adj/adv + than",
+            "superlative": "Tính từ/trạng từ ngắn: the + adj/adv-est; Tính từ/trạng từ dài: the most + adj/adv"
+          },
+          "explanation": "Dùng để so sánh đặc điểm, tính chất, hoặc mức độ của hai hoặc nhiều đối tượng.",
+          "examples": [
+            "She is taller than him.",
+            "This book is more interesting than that one.",
+            "He is the tallest student in the class.",
+            "This is the most beautiful painting I've ever seen."
+          ]
+        }
+      ]
+    }
+  ]
