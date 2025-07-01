@@ -22,6 +22,9 @@ func SetupRouter(db *sql.DB) *mux.Router {
 	// Chatbot routes
 	r.HandleFunc("/api/chatbot/answer", handler.GenerateAnswer).Methods("POST")
 
+	// Word routes
+	r.HandleFunc("/api/word/suggest", handler.SuggestWordsHandler).Methods("GET")
+
 	// Auth routes
 	userRepo := repo_impl.NewUserRepo(db)
 	authHandler := &handler.AuthenticationHandler{UserRepo: userRepo}
