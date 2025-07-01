@@ -6,6 +6,7 @@ import (
 
 	"EngPal/internal"
 	"EngPal/router"
+	"EngPal/internal/config"
 
 	"github.com/joho/godotenv"
 )
@@ -18,7 +19,14 @@ func main() {
 
 	internal.InitGeminiClient()
 
-	r := router.SetupRouter()
+	// Khởi tạo kết nối database
+	db, err := config.OpenDBConnection()
+	if err != nil {
+		log.Fatal("Không thể kết nối database:", err)
+	}
+	defer db.Close()
+
+	r := router.SetupRouter(db)
 
 	log.Println("Server is running on port 8080...")
 	log.Fatal(http.ListenAndServe(":8080", r))

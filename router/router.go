@@ -2,11 +2,14 @@ package router
 
 import (
 	"EngPal/handler"
+	"EngPal/repository/repo_impl"
+
+	"database/sql"
 
 	"github.com/gorilla/mux"
 )
 
-func SetupRouter() *mux.Router {
+func SetupRouter(db *sql.DB) *mux.Router {
 	r := mux.NewRouter()
 
 	// Assignment routes
@@ -17,7 +20,14 @@ func SetupRouter() *mux.Router {
 	r.HandleFunc("/api/review/generate", handler.GenerateReview).Methods("POST")
 
 	// Chatbot routes
-	r.HandleFunc("/api/chatbot/generate-answer", handler.GenerateAnswer).Methods("POST")
+	r.HandleFunc("/api/chatbot/answer", handler.GenerateAnswer).Methods("POST")
+
+	// Auth routes
+	userRepo := repo_impl.NewUserRepo(db)
+	authHandler := &handler.AuthenticationHandler{UserRepo: userRepo}
+	r.HandleFunc("/api/login", authHandler.ServeLogin).Methods("POST")
+	r.HandleFunc("/api/register", authHandler.ServeRegister).Methods("POST")
+	r.HandleFunc("/api/forgot-password", authHandler.ServeForgotPassword).Methods("POST")
 
 	return r
 }
