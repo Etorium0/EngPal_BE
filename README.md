@@ -12,11 +12,13 @@
 
 ```
 EngPal_BE/
-├── cmd/            # Entry point của ứng dụng
-├── pkg/            # Logic nghiệp vụ chính
-├── internal/       # Các package nội bộ chỉ sử dụng trong dự án
-├── go.mod          # Quản lý module Go và dependencies
-├── go.sum          # Danh sách hash của dependencies
+├── assets/: Tài nguyên tĩnh, dữ liệu mẫu.
+├── entities/: Định nghĩa các kiểu dữ liệu như assignment_type, english_level.
+├── handler/: Xử lý các logic API như authentication, assignment, chatbot, review, translate, notification...
+├── internal/: Mã nguồn chỉ dùng nội bộ dự án.
+├──── config/: Cấu hình hệ thống.
+├──── migrations/: Các file migration SQL (tạo user, notify, push token, 
+├── router/: Định tuyến API.
 └── README.md       # Tài liệu dự án
 ```
 
