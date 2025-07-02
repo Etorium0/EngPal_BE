@@ -22,6 +22,9 @@ func SetupRouter(db *sql.DB) *mux.Router {
 	// Chatbot routes
 	r.HandleFunc("/api/chatbot/answer", handler.GenerateAnswer).Methods("POST")
 
+	// Translate route
+	r.HandleFunc("/api/translate", handler.TranslateHandler).Methods("POST")
+
 	// Word routes
 	r.HandleFunc("/api/word/suggest", handler.SuggestWordsHandler).Methods("GET")
 
@@ -35,12 +38,16 @@ func SetupRouter(db *sql.DB) *mux.Router {
 	// Notification routes
 	r.HandleFunc("/api/user/notification-setting", handler.UpdateNotificationSettingHandler(db)).Methods("POST")
 	r.HandleFunc("/api/user/notification-setting", handler.GetNotificationSettingHandler(db)).Methods("GET")
+	r.HandleFunc("/api/user/notification-history", handler.GetNotificationHistoryHandler(db)).Methods("GET")
 
 	// New route
 	r.HandleFunc("/api/notify/test", handler.SendTestNotification).Methods("POST")
 
 	// Push token route
 	r.HandleFunc("/api/user/push-token", handler.SavePushTokenHandler(db)).Methods("POST")
+
+	// MangaDex proxy route
+	r.PathPrefix("/api/mangadex/").HandlerFunc(handler.MangaDexProxyHandler)
 
 	return r
 }

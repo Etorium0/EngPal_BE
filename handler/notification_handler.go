@@ -3,6 +3,7 @@ package handler
 import (
 	"database/sql"
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"time"
 )
@@ -101,5 +102,83 @@ func SavePushTokenHandler(db *sql.DB) http.HandlerFunc {
 			return
 		}
 		w.WriteHeader(http.StatusOK)
+	}
+}
+
+// Handler lấy lịch sử notification
+// GET /api/user/notification-history
+
+type NotificationHistory struct {
+	ID      string `json:"id"`
+	AppName string `json:"appName"`
+	Time    string `json:"time"`
+	Greeting string `json:"greeting"`
+	Message string `json:"message"`
+}
+
+func GetNotificationHistoryHandler(db *sql.DB) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		userID := getUserIDFromContext(r)
+		
+		// Query lịch sử notification từ DB
+		rows, err := db.Query(`
+			SELECT id, app_name, created_at, greeting, message 
+			FROM notification_history 
+			WHERE user_id = $1 
+			ORDER BY created_at DESC 
+			LIMIT 20
+		`, userID)
+		
+		if err != nil {
+			// Nếu bảng chưa tồn tại, trả về mảng rỗng
+			w.Header().Set("Content-Type", "application/json")
+			json.NewEncoder(w).Encode([]NotificationHistory{})
+			return
+		}
+		defer rows.Close()
+		
+		var history []NotificationHistory
+		for rows.Next() {
+			var id, appName, greeting, message string
+			var createdAt time.Time
+			if err := rows.Scan(&id, &appName, &createdAt, &greeting, &message); err != nil {
+				continue
+			}
+			
+			// Format thời gian
+			timeStr := formatTimeAgo(createdAt)
+			
+			history = append(history, NotificationHistory{
+				ID:       id,
+				AppName:  appName,
+				Time:     timeStr,
+				Greeting: greeting,
+				Message:  message,
+			})
+		}
+		
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(history)
+	}
+}
+
+// Helper function để format thời gian
+func formatTimeAgo(t time.Time) string {
+	now := time.Now()
+	duration := now.Sub(t)
+	
+	if duration < time.Minute {
+		return "Vừa xong"
+	} else if duration < time.Hour {
+		minutes := int(duration.Minutes())
+		return fmt.Sprintf("%d phút trước", minutes)
+	} else if duration < 24*time.Hour {
+		hours := int(duration.Hours())
+		return fmt.Sprintf("%d giờ trước", hours)
+	} else if duration < 7*24*time.Hour {
+		days := int(duration.Hours() / 24)
+		return fmt.Sprintf("%d ngày trước", days)
+	} else {
+		return t.Format("02/01/2006")
 	}
 } 

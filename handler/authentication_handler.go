@@ -6,7 +6,11 @@ import (
 	"net/http"
 	"EngPal/repository"
 	"golang.org/x/crypto/bcrypt"
+	"time"
+	"github.com/golang-jwt/jwt/v4"
 )
+
+var jwtSecret = []byte("your_secret_key") // Nên để biến này ở file config thực tế
 
 type LoginRequest struct {
 	Username string `json:"username"`
@@ -16,6 +20,7 @@ type LoginRequest struct {
 type LoginResponse struct {
 	Success bool   `json:"success"`
 	Message string `json:"message"`
+	Token   string `json:"token,omitempty"`
 }
 
 type RegisterRequest struct {
@@ -83,7 +88,18 @@ func (h *AuthenticationHandler) ServeLogin(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	resp := LoginResponse{Success: true, Message: "Login successful"}
+	// Sinh JWT token
+	token, err := generateJWT(req.Username)
+	if err != nil {
+		http.Error(w, "Could not generate token", http.StatusInternalServerError)
+		return
+	}
+
+	resp := LoginResponse{
+		Success: true,
+		Message: "Login successful",
+		Token:   token,
+	}
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }
@@ -149,4 +165,12 @@ func (h *AuthenticationHandler) ServeForgotPassword(w http.ResponseWriter, r *ht
 	resp := ForgotPasswordResponse{Success: true, Message: "Password updated successfully"}
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
+}
+
+func generateJWT(username string) (string, error) {
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+		"username": username,
+		"exp":      time.Now().Add(time.Hour * 72).Unix(), // hết hạn sau 72h
+	})
+	return token.SignedString(jwtSecret)
 }
