@@ -46,7 +46,7 @@ func SetupRouter(db *sql.DB) *mux.Router {
 	// Push token route
 	r.HandleFunc("/api/user/push-token", handler.SavePushTokenHandler(db)).Methods("POST")
 
-	// MangaDex proxy route
+	// MangaDex proxy route (API và ảnh uploads)
 	r.PathPrefix("/api/mangadex/").HandlerFunc(handler.MangaDexProxyHandler)
 
 	return r
